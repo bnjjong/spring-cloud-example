@@ -1,0 +1,32 @@
+dependencies {
+    // test
+    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.6.2'
+    // https://mvnrepository.com/artifact/org.junit.platform/junit-platform-engine
+    testImplementation group: 'org.junit.platform', name: 'junit-platform-engine', version: '1.6.2'
+    // https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter
+    // core 는 내장 되어 있다.
+    testImplementation group: 'org.mockito', name: 'mockito-junit-jupiter', version: '3.5.10'
+    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.6.2'
+    // https://mvnrepository.com/artifact/org.assertj/assertj-core
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.19.0'
+}
+
+test {
+    // Enable JUnit 5 (Gradle 4.6+).
+    useJUnitPlatform {
+        //includeTags 'fast', 'smoke & feature-a'
+        // excludeTags 'slow', 'ci'
+        includeEngines 'junit-jupiter'
+        // excludeEngines 'junit-vintage'
+    }
+    // Always run tests, even when nothing changed.
+    dependsOn 'cleanTest'
+
+    // Show test results.
+    testLogging {
+        //showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+}
