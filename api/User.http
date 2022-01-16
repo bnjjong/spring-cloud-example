@@ -1,0 +1,27 @@
+### 저장
+POST http://localhost:9001/user
+Content-Type: application/json
+
+{
+  "name": "jongsang",
+  "email": "jongsang@bigin.io",
+  "password": "test1234"
+}
+
+### 저장
+POST http://localhost:9001/user
+Content-Type: application/json
+
+{
+  "name": "eunji",
+  "email": "eunji@bigin.io",
+  "password": "test1234"
+}
+
+### 전체 조회
+GET http://localhost:9001/users
+Content-Type: application/json
+
+### user ID로 조회
+GET http://localhost:9001/user/653f436b-97c1-48af-b763-0abcbc3c9f7e
+Content-Type: application/json

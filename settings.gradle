@@ -1,2 +1,2 @@
 rootProject.name = 'spring-cloud-example'
-include('eureka-server', 'user-service1', 'user-service2')
+include('eureka-server', 'user-service1', 'user-service2', 'api-gateway')
